@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>ISS Results - {{ city }}</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <style>
+    /* Inline tweaks specific to results page */
+    iframe {
+      border: none;
+      border-radius: 12px;
+    }
+    h2, h3 {
+      color: #ffd60a;
+    }
+    .astro-link {
+      color: #00b4d8;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .astro-link:hover {
+      color: #90e0ef;
+      text-decoration: underline;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      color: #ffd60a;
+    }
+  </style>
+</head>
+
+<body>
+<!-- 🌎 Background Video -->
+<video autoplay muted loop playsinline id="bgVideo">
+  <source src="{{ url_for('static', filename='earth_rotation.mp4') }}" type="video/mp4">
+</video>
+
+  <div class="container">
+    <header>
+      <h1>🌍 ISS Tracker — Results for {{ city }}</h1>
+      <p class="subtitle">Live Tracking | Pass Predictions | Collision Estimation</p>
+    </header>
+
+    <main class="grid">
+      <section class="card left">
+        <h2>🛰️ Live Tracking</h2>
+        <p><b>ISS currently over:</b> {{ place_name }}</p>
+
+        <h3>Next ISS Pass Predictions</h3>
+        <ul>
+          {% for p in pass_times %}
+            <li>• {{ p.time }} — ({{ p.duration }} sec)
+              {% if p.source %}<small>({{ p.source }})</small>{% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+
+        <h3>🧑‍🚀 People in Space</h3>
+        <p><b>Currently:</b> {{ astro_count or 'N/A' }}</p>
+        <ul>
+          {% for name in astro_names %}
+            <li><a href="https://en.wikipedia.org/wiki/{{ name|replace(' ', '_') }}" 
+                   class="astro-link" target="_blank">{{ name }}</a></li>
+          {% endfor %}
+        </ul>
+      </section>
+      <section class="card right">
+        <h2>🗺️ Interactive Map</h2>
+        <iframe src="/static/iss_map.html" width="100%" height="420"></iframe>
+
+        <h3 style="margin-top:15px">💥 Collision Risk Report (Next 3 Days)</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Object</th>
+              <th>Risk</th>
+              <th>Miss (km)</th>
+              <th>Probability</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for r in collision_risks %}
+              <tr>
+                <td>{{ r.object_name }}</td>
+                <td>{{ r.level }}</td>
+                <td>{{ r.miss_distance_km }}</td>
+                <td>{{ r.probability }}</td>
+                <td>{{ r.time }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+   <!--<footer class="card">
+      <p>Live ISS Tracker — MCA Mini Project | Data Source: N2YO & WhereTheISS.at</p>-->

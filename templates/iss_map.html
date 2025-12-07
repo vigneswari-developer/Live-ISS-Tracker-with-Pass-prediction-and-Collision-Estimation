@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d7b2ddf9f74b8cbc5b985e1c5b9f9e15 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://unpkg.com/@joergdietrich/leaflet.terminator"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_d7b2ddf9f74b8cbc5b985e1c5b9f9e15" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_d7b2ddf9f74b8cbc5b985e1c5b9f9e15 = L.map(
+                "map_d7b2ddf9f74b8cbc5b985e1c5b9f9e15",
+                {
+                    center: [10.4937982202073, 54.6971902117315],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 3,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_396262bc90afd2dc304d2b1b5e14d8ac = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_396262bc90afd2dc304d2b1b5e14d8ac.addTo(map_d7b2ddf9f74b8cbc5b985e1c5b9f9e15);
+        
+    
+            L.terminator().addTo(map_d7b2ddf9f74b8cbc5b985e1c5b9f9e15);
+        
+    
+            var marker_6fc90e4fc427d912765f8c43dfed1cfd = L.marker(
+                [28.6328027, 77.2197713],
+                {
+}
+            ).addTo(map_d7b2ddf9f74b8cbc5b985e1c5b9f9e15);
+        
+    
+            var icon_3c4def13332bfe1409bc1113cec89c9d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_36fe16d5232b81929c7b15c3e537e05a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_372b7a4e7662de02213f99b5484475b6 = $(`<div id="html_372b7a4e7662de02213f99b5484475b6" style="width: 100.0%; height: 100.0%;"><b>Next ISS Passes for delhi, india:</b><br><br>• <b>Sunday, November 02 at 07:49:09 AM</b> (Duration: 440 sec)<br>• <b>Sunday, November 02 at 09:19:09 AM</b> (Duration: 480 sec)<br>• <b>Sunday, November 02 at 10:49:09 AM</b> (Duration: 520 sec)<br>• <b>Sunday, November 02 at 12:19:09 PM</b> (Duration: 560 sec)<br>• <b>Sunday, November 02 at 01:49:09 PM</b> (Duration: 600 sec)<br></div>`)[0];
+                popup_36fe16d5232b81929c7b15c3e537e05a.setContent(html_372b7a4e7662de02213f99b5484475b6);
+            
+        
+
+        marker_6fc90e4fc427d912765f8c43dfed1cfd.bindPopup(popup_36fe16d5232b81929c7b15c3e537e05a)
+        ;
+
+        
+    
+    
+            marker_6fc90e4fc427d912765f8c43dfed1cfd.bindTooltip(
+                `<div>
+                     Your Location
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6fc90e4fc427d912765f8c43dfed1cfd.setIcon(icon_3c4def13332bfe1409bc1113cec89c9d);
+            
+    
+            var marker_dcd2849185fd91a376b15c74b7be1a61 = L.marker(
+                [-7.6452062595854, 32.174609123463],
+                {
+}
+            ).addTo(map_d7b2ddf9f74b8cbc5b985e1c5b9f9e15);
+        
+    
+            var icon_6086ae3ece7bfe42b4c7009a2f5b4424 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "satellite",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f1c1c11075c711a9e7b9f36bfae639bc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2f6543fd5d2464a487b27079b0c12acf = $(`<div id="html_2f6543fd5d2464a487b27079b0c12acf" style="width: 100.0%; height: 100.0%;">ISS currently over: <b>Songwe Region, Tanzania</b></div>`)[0];
+                popup_f1c1c11075c711a9e7b9f36bfae639bc.setContent(html_2f6543fd5d2464a487b27079b0c12acf);
+            
+        
+
+        marker_dcd2849185fd91a376b15c74b7be1a61.bindPopup(popup_f1c1c11075c711a9e7b9f36bfae639bc)
+        ;
+
+        
+    
+    
+            marker_dcd2849185fd91a376b15c74b7be1a61.bindTooltip(
+                `<div>
+                     ISS
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_dcd2849185fd91a376b15c74b7be1a61.setIcon(icon_6086ae3ece7bfe42b4c7009a2f5b4424);
+            
+    
+            var layer_control_62790c551b951060bbfcb03b7f4e7fec_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_396262bc90afd2dc304d2b1b5e14d8ac,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_62790c551b951060bbfcb03b7f4e7fec = L.control.layers(
+                layer_control_62790c551b951060bbfcb03b7f4e7fec_layers.base_layers,
+                layer_control_62790c551b951060bbfcb03b7f4e7fec_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_d7b2ddf9f74b8cbc5b985e1c5b9f9e15);
+
+        
+</script>
+</html>
